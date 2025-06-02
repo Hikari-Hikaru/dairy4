@@ -3,7 +3,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>2025年6月2日 - ブログ開始！</title>
+  <title>2025年7月15日 - おさんぽ～♪</title>
   <link rel="stylesheet" href="../style.css"> <!-- 共通CSSの読み込み -->
 
   <style>
@@ -34,7 +34,7 @@
   </header>
 
   <main>
-    <h2>2025年7月13日 - ブログ開始！</h2>
+    <h2>2025年7月15日 - BeautyFish！</h2>
     <p>
       今日は鎌倉行ってきたよー！<br>
       キレイな鯉を見つけたから<br><br>

@@ -44,7 +44,7 @@
     <p>※写真を0.5秒以上長押しすると黒画面になります。</p>
 
     <!-- 新しい鯉の写真 -->
-    <img src="images/image0.jpeg" alt="きれいな鯉" class="protected-photo">
+   <img src="https://hikari-hikaru.github.io/dairy4/image0.jpeg" alt="きれいな鯉" width="300">
   </main>
 
   <div id="blackout"></div>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>2025年7月15日 - おさんぽ～♪</title>
-  <link rel="stylesheet" href="../style.css"> <!-- 共通CSSの読み込み -->
+  <link rel="stylesheet" href="../style.css">
 
   <style>
     #blackout {
@@ -15,30 +15,33 @@
     }
 
     .protected-photo {
-      width: 300px;
+      width: 100%;
       user-select: none;
       -webkit-user-drag: none;
       pointer-events: auto;
-      margin-bottom: 16px;
-
-      /* iOS保存時に黒くなりやすい処理 */
-      mix-blend-mode: multiply;
-      filter: brightness(0.3);
-      -webkit-mask-image: linear-gradient(black, black);
+      display: block;
     }
 
-    .photo-wrapper {
+    .watermark-container {
       position: relative;
       display: inline-block;
+      width: 300px;
+      margin-bottom: 16px;
     }
 
+    .watermark {
+      position: absolute;
+      bottom: 8px;
+      right: 12px;
+      color: white;
+      font-size: 12px;
+      opacity: 0.6;
+      text-shadow: 1px 1px 2px black;
+      pointer-events: none;
+    }
   </style>
 </head>
-<body
-  oncontextmenu="return false;"
-  onselectstart="return false;"
-  ondragstart="return false;"
->
+<body oncontextmenu="return false;" onselectstart="return false;" ondragstart="return false;">
   <header>
     <h1>HIKARI・HIKARU 日々のブログ</h1>
   </header>
@@ -51,9 +54,9 @@
       写真をUPするね～✨
     </p>
 
-    <!-- 鯉の写真をラッパーで囲って制御 -->
-    <div class="photo-wrapper">
+    <div class="watermark-container">
       <img src="https://hikari-hikaru.github.io/dairy4/image0.jpeg" alt="きれいな鯉" class="protected-photo">
+      <div class="watermark">© HIKARI-HIKARU 2025</div>
     </div>
   </main>
 
@@ -65,20 +68,13 @@
 
     photos.forEach(photo => {
       let timer;
-
       photo.addEventListener('touchstart', () => {
         timer = setTimeout(() => {
           blackout.style.display = 'block';
         }, 500);
       });
-
-      photo.addEventListener('touchend', () => {
-        clearTimeout(timer);
-      });
-
-      photo.addEventListener('touchcancel', () => {
-        clearTimeout(timer);
-      });
+      photo.addEventListener('touchend', () => clearTimeout(timer));
+      photo.addEventListener('touchcancel', () => clearTimeout(timer));
     });
 
     blackout.addEventListener('click', () => {

@@ -1,4 +1,3 @@
-# dairy4
 <!DOCTYPE html>
 <html lang="ja">
 <head>

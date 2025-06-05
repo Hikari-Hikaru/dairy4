@@ -20,7 +20,18 @@
       -webkit-user-drag: none;
       pointer-events: auto;
       margin-bottom: 16px;
+
+      /* iOS保存時に黒くなりやすい処理 */
+      mix-blend-mode: multiply;
+      filter: brightness(0.3);
+      -webkit-mask-image: linear-gradient(black, black);
     }
+
+    .photo-wrapper {
+      position: relative;
+      display: inline-block;
+    }
+
   </style>
 </head>
 <body
@@ -40,8 +51,10 @@
       写真をUPするね～✨
     </p>
 
-    <!-- 新しい鯉の写真 -->
-   <img src="https://hikari-hikaru.github.io/dairy4/image0.jpeg" alt="きれいな鯉" width="300">
+    <!-- 鯉の写真をラッパーで囲って制御 -->
+    <div class="photo-wrapper">
+      <img src="https://hikari-hikaru.github.io/dairy4/image0.jpeg" alt="きれいな鯉" class="protected-photo">
+    </div>
   </main>
 
   <div id="blackout"></div>
